@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+    <script src="https://unpkg.com/dayjs@1.10.7/locale/it.js"></script>
+    <script>dayjs.locale('it')</script>
+</head>
+<body>
+    <div id="app">
+        <header class="header">
+            <h1>Movies</h1>
+        </header>
+        <main class="main">
+            <div class="movies">
+                <div class="movie" v-for="movie in movies">
+                    <div class="poster">
+                        <img :src='movie.poster' alt="">
+                    </div>
+                    <div class="info">
+                        <h2 class="title">{{movie.title}}</h2>
+                        <p class="description">{{movie.description}}</p>
+                        <p class="director"><strong>Diretto da:</strong> {{movie.director}}</p>
+                        <p class="cast"><strong>Cast:</strong> {{movie.cast.join(", ")}}</p>
+                        <p class="lang"><strong>Lingua originale:</strong> {{movie.language}}</p>
+                        <p class="country"><strong>Paese:</strong> {{movie.country}}</p>
+                        <p v-if="movie.released" class="release"><strong>E' uscito il:</strong> {{movie.formattedDate}}</p>
+                        <p v-else class="release"><strong>In uscita il:</strong> {{movie.formattedDate}}</p>
+                        <p v-if="movie.vote" class="vote" :class="{'green' : movie.vote >= 6.5, 'red' : movie.vote < 6.5}">{{movie.formattedVote}} di voti positivi</p>
+                        <p v-else class="vote">Non ancora votato</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+</html>

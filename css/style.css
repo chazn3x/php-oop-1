@@ -1,0 +1,66 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #222222;
+  color: white;
+}
+
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.main {
+  width: 80%;
+  margin: 3rem auto;
+}
+
+.main .movies .movie {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 3rem;
+}
+
+.main .movies .movie .poster img {
+  height: 350px;
+}
+
+.main .movies .movie .info {
+  margin-left: 2rem;
+}
+
+.main .movies .movie .info .title {
+  margin-bottom: 1rem;
+}
+
+.main .movies .movie .info .description {
+  margin-bottom: 1rem;
+}
+
+.main .movies .movie .info .director, .main .movies .movie .info .cast, .main .movies .movie .info .lang, .main .movies .movie .info .country, .main .movies .movie .info .release, .main .movies .movie .info .vote {
+  font-size: .8rem;
+  margin: .3rem 0;
+}
+
+.main .movies .movie .info .vote.green {
+  color: #187d18;
+}
+
+.main .movies .movie .info .vote.red {
+  color: red;
+}
+/*# sourceMappingURL=style.css.map */
